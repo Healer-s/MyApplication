@@ -1,6 +1,0 @@
-1.移动两个文件到　/usr/local/bin 　
-2．给apktool 文件执行的权限：
-进入目录　cd  /usr/local/bin/ 
-sudo chmod +x apktool
-然后就可以在任何目录执行　apktool 了
-比如在目录下反编译某个文件　 apktool d app.apk
