@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.relativelayout_test.MainActivity">
+    <!--    这个是在容器中央的   -->
+    <ImageView
+        android:id="@+id/image_animal"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/animal"/>
+    <!--    在中间图片的左边    -->
+    <ImageView
+        android:id="@+id/image_vip"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toLeftOf="@id/image_animal"
+        android:layout_centerInParent="true"
+        android:src="@drawable/vip"/>
+    <!--    在中间图片的右边    -->
+    <ImageView
+        android:id="@+id/image_glass"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@+id/image_animal"
+        android:layout_centerInParent="true"
+        android:src="@drawable/glass"/>
+    <!--    在中间图片的上边    -->
+    <ImageView
+        android:id="@+id/image_glass_v1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/image_animal"
+        android:layout_centerInParent="true"
+        android:src="@drawable/glass_v1"/>
+    <!--    在中间图片的下边    -->
+    <ImageView
+        android:id="@+id/image_light"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/image_animal"
+        android:layout_centerInParent="true"
+        android:src="@drawable/light" />
+    <!--    layout_marginTop/Right设置成负数以广告页面的方式弹出  -->
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/guanli"/>
+    <ImageView
+        android:id="@+id/imgCancle"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignRight="@id/imgBack"
+        android:layout_alignTop="@id/imgBack"
+        android:background="@drawable/shubiao"
+        android:layout_marginTop="-15dp"
+        android:layout_marginRight="-10dp" />
+</RelativeLayout>

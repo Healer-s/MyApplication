@@ -91,3 +91,11 @@ paddingLeft				往内部元素的左边填充一定的边距
 paddingRight			往内部元素的右边边填充一定的边距
 paddingTop				往内部元素的上边填充一定的边距
 paddingBottom			往内部元素的下边填充一定的边距
+
+
+/**.margin与padding的区别
+* 初学者对于这两个属性可能会有一点混淆，这里区分下： 首先margin代表的是偏移,比如marginleft = "5dp"表示组件离容器左边缘偏移5dp; 而
+* padding代表的则是填充,而填充的对象针对的是组件中的元素,比如TextView中的文字 比如为TextView设置paddingleft = "5dp", 则是在组
+* 件里的元素的左边填充5dp的空间！ margin针对的是容器中的组件，而padding针对的是组件中的元素，要区分开来！**/
+
+//  TableLayout(表格布局)
