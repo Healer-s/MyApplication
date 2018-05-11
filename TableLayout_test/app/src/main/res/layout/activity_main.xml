@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.user.tablelayout_test.MainActivity"
+    android:collapseColumns="0,2">
+    <!--    隐藏第一列第三列    -->
+
+    <TableRow>
+        <Button
+            android:layout_weight="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_weight="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Two"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_weight="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Three"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_weight="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Four"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_weight="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Five"
+            android:textAllCaps="false"/>
+
+    </TableRow>
+
+</TableLayout>

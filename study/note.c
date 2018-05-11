@@ -99,3 +99,9 @@ paddingBottom			往内部元素的下边填充一定的边距
 * 件里的元素的左边填充5dp的空间！ margin针对的是容器中的组件，而padding针对的是组件中的元素，要区分开来！**/
 
 //  TableLayout(表格布局)
+1.基本属性
+android:collapseColumns:	设置需要被隐藏的列的序号
+android:shrinkColumns:		设置允许被收缩的列的列序号
+android:stretchColumns:		设置运行被拉伸的列的列序号
+///注： 以上这三个属性的列号都是从0开始算的,可以多号
+
