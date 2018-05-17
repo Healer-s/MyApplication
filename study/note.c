@@ -105,3 +105,15 @@ android:shrinkColumns:		设置允许被收缩的列的列序号
 android:stretchColumns:		设置运行被拉伸的列的列序号
 ///注： 以上这三个属性的列号都是从0开始算的,可以多号
 
+
+//	FrameLayout(帧布局)
+FrameLayout可以说是六大布局中最为简单的一个布局。
+1.常用属性
+FrameLayout的属性很少就两个
+注:	前景图像:永远处于帧布局最上面,直接面对用户的图像,就是不会被覆盖的图片
+
+android:foreground:			*设置改帧布局容器的前景图像
+android:foregroundGravity:	设置前景图像显示的位置
+
+
+Invalidate Caches / Restart就是清理缓存和索引的入口： 解决  Lock file: C:\Users\Administrator\.gradle\caches\modules-2\modules-2.lock
