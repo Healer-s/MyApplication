@@ -1,4 +1,11 @@
 /**
+ * 	Android Studio Error
+ * **/
+ 1.Invalidate Caches / Restart就是清理缓存和索引的入口： 解决  Lock file: C:\Users\Administrator\.gradle\caches\modules-2\modules-2.lock
+
+
+
+/**
  * 	  Android中有六大布局,分别是: 
  * 		LinearLayout(线性布局)
  * 		RelativeLayout(相对布局)
@@ -112,8 +119,34 @@ FrameLayout可以说是六大布局中最为简单的一个布局。
 FrameLayout的属性很少就两个
 注:	前景图像:永远处于帧布局最上面,直接面对用户的图像,就是不会被覆盖的图片
 
-android:foreground:			*设置改帧布局容器的前景图像
+android:foreground:			设置改帧布局容器的前景图像
 android:foregroundGravity:	设置前景图像显示的位置
 
 
-Invalidate Caches / Restart就是清理缓存和索引的入口： 解决  Lock file: C:\Users\Administrator\.gradle\caches\modules-2\modules-2.lock
+
+
+// GridLayout(网格布局)
+特点:
+1.可以自己设置布局中的组件的排列方式
+2.可以自定义网格布局的行列数
+3.可以直接设置组件位于某行某列
+4.可以设置组件横跨几行或几列
+
+相关属性
+1.设置排列对齐
+设置排列方式:	android：orientation="" 	vertical(竖直,默认)或者horizontal(水平)
+设置对齐方式:	android:layout_gravity="" 	center,left,right,buttom
+
+2.设置几行几列
+设置行数:		android.rowCount="4"	设置网格布局有4行
+设置列数:		android.columncount="4" 设置网格布局有4列
+
+3.设置组件所在的行列 // 从0开始
+第几行			android.layout_row="1"		第2行
+第几列			android.layout_column="2"	第3列
+
+4.设置组件横跨几行几列
+横跨几行		android.layout_rowSpan="2"		纵向横跨2行
+横跨几列		android.layout_columnSpan="3"	横向横跨2列
+
+
