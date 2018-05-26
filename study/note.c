@@ -1,3 +1,8 @@
+/*
+快捷方式:
+Ctrl+Shift+v:	跳出剪贴板(记录最近复制的内容)
+*/
+
 /**
  * 	Android Studio Error
  * **/
@@ -148,5 +153,98 @@ android:foregroundGravity:	设置前景图像显示的位置
 4.设置组件横跨几行几列
 横跨几行		android.layout_rowSpan="2"		纵向横跨2行
 横跨几列		android.layout_columnSpan="3"	横向横跨2列
+
+// AbsoluteLayout(绝对布局)
+四大控件属性(单位都是dp)
+1.控制大小:
+android:layout_width:	组件宽度
+android:layout_height:	组件高度
+
+2.控制位置:
+android:layout_x:		设置组件的X坐标
+android:layout_y:		设置组件的Y坐标
+
+
+/**
+ *
+ *	Android中的六大布局都已总结， 建议使用 LineaLayout的权重属性+RelativeLayout来构造界面
+ *
+ * */
+
+/**
+ *
+ *				UI控件
+ *
+ * */
+常用的单位
+1.dp(dip)
+	device independent pixels(设备独立像素),不同设备有不同的显示效果,这个和设备硬件有关,一般
+我们为了支持WVGA, HVGA和QVGA推荐使用这个
+
+2.px(pixels像素)
+	不同的设备显示效果相同,一般我们HVGA代表320x480像素;
+
+3.pt:point
+	是一个标准的长度单位,1pt=1/72英寸,用于印刷业非常简单易用
+
+4.sp:(scaled pixels放大像素)
+	主要用于字体显示best for textsize.
+
+// TextView控件
+1.主要属性:
+1.id:				主要为TextView设置一个组件id,根据ID,可以通过Java代码中的findViewById()的方法获得该对象,进行相关的属性设置
+2.layout_width:		组件的宽度
+3.layout_height:	组件的高度
+4.gravity:			设置控件中内容的对齐方式,TextView中的是文字,ImageView中的是图片
+5.text:				设置显示的内容
+6.textColor:		设置字体颜色
+7.textStyle:		设置字体风格,三个可选值:	normal(无效果) bold(加粗)  italic(斜体)
+8.textSize:			设置字体大小
+9.background:		控件的背景颜色,可以理解为填充整个控件的颜色,可以是图片
+
+2.带阴影的TextView :涉及到几个属性:
+android:shadowColor:	设置阴影颜色,需要与shadowRadius一起使用
+android:shadowRadius:	设置阴影的模糊程度,设置会0.1就会变成字体颜色了,建议设置为3.0
+android:shadowDx:		设置阴影在水平方向的偏移,就是水平方向阴影开始的横坐标位置
+android:shadowDy:		设置阴影在垂直方向的偏移,就是垂直方向阴影开始的纵坐标位置
+
+3.带边框的TextView
+如果你想为TextView设置一个边框背景.可以参考下面的方法
+自行编写一个ShapeDrawable的资源文件.然后TextView和blackgroung设置为这个drawable资源即可
+
+shapeDrawable资源文件的几个节点以及属性:
+<solid android:color = """3.带边框的TextView
+如果你想为TextView设置一个边框背景.可以参考下面的方法
+自行编写一个ShapeDrawable的资源文件.然后TextView和blackgroung设置为这个drawable资源即可
+
+shapeDrawable资源文件的几个节点以及属性:
+<solid android:color = """3.带边框的TextView
+如果你想为TextView设置一个边框背景.可以参考下面的方法
+自行编写一个ShapeDrawable的资源文件.然后TextView和blackgroung设置为这个drawable资源即可
+
+shapeDrawable资源文件的几个节点以及属性:
+<solid android:color = "xxx"						这个是设置背景颜色的
+<stroke android:width="xdp" android:color = "xxx" 	这个是设置边框粗细,以及边框颜色
+<padding androidLbotton = "xdp"..> 					这个是设置边距
+<corners android:topLeftRadius="10px" ...>			这个设置圆角的
+<gradient>				这个设置渐变色的,可选属性有:
+startColor:起始颜色, endColor:结束颜色
+centerColor:中间颜色,
+angle:方向角度,等于0时,然后逆时针转,当angle=90时,从下往上,
+type:设置渐变色的类型
+
+4.带图片(drawableXxx)的TextView:
+基本用法:
+	设置图片的核心其实就是:drawableXxx:	可以设置四个方向的图片:
+drawableTop,drawableButton,drawableLeft,drawableRight
+另外还可以使用drawablePadding来设置图片和文件的间距
+
+
+5.使用autoLink属性识别链接类型	
+	当文字出现了URL,E-Mail,电话号码,地图的时候,我们可以通过设置autoLink属性,
+当点击文字中对应部分时,即可跳转某人app,比如遗传电话,跳转拨号.
+
+
+
 
 

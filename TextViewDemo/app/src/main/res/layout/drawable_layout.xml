@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ergou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/dog"
+        android:drawableBottom="@drawable/dog"
+        android:drawableLeft="@drawable/dog"
+        android:drawableRight="@drawable/dog"
+        android:drawablePadding="10dp"
+        android:text="二狗"
+        />
+    <TextView
+        android:id="@+id/baidu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="http://www.baidu.com"
+        android:autoLink="web"/>
+</RelativeLayout>
