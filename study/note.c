@@ -246,5 +246,48 @@ drawableTop,drawableButton,drawableLeft,drawableRight
 
 
 
+6.TextView玩转HTML
+	TextView除了显示普通文本外,TextView还定义了一些类似于HTML的标签,通过这些标签,我们可以
+使TextView显示不同颜色的字体,大小,甚至时图片,或者链接等,我们只需要使用HTML中的一些标签,加
+上android:text.HTML类的支持,即可完成.
+
+常用的标签:
+<font>:		设置颜色和字体
+<big>:		设置字体大号
+<small>:	设置字体小号
+<i><b>:		斜体粗体
+<a>:		连接网址
+<img>:		图片
+
+
+7.SpannableString&SpannableStringBuilder定制文本
+	除了上面的HTML可以定制我们TextView的样式外,还可以使用SpannableString和SpannableStringBuilder
+来完成
+两者区别:
+前者针对的是不可变文本,而后者则时针对可变文本
+
+SpannableString可以使用的API:
+BackgroundColorSpan				背景色
+ClickableSpan					文本可点击,有点击事件
+ForegroundColorSpan				文本颜色(前景色)
+MaskFilterSpan					修饰效果,如模糊(BlurMaskFilter),浮雕(EmbossMaskFilter)
+MetricAffectingSpan				父类,一般不用
+RasterizerSpan					光栏效果
+StrikethroughSpan				删除线(中间线)
+SuggestionSpan 					相当于占位符
+UnderlineSpan 					下划线
+AbsoluteSizeSpan 				绝对大小（文本字体）
+DynamicDrawableSpan 			设置图片，基于文本基线或底部对齐。
+ImageSpan 						图片
+RelativeSizeSpan				相对大小（文本字体）
+ReplacementSpan 				父类，一般不用
+ScaleXSpan 						基于x轴缩放
+StyleSpan 						字体样式：粗体、斜体等
+SubscriptSpan 					下标（数学公式会用到）
+SuperscriptSpan 				上标（数学公式会用到）
+TextAppearanceSpan 				文本外貌（包括字体、大小、样式和颜色）
+TypefaceSpan 					文本字体
+URLSpan 						文本超链接
+
 
 
