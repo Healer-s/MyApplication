@@ -290,4 +290,6 @@ TypefaceSpan 					文本字体
 URLSpan 						文本超链接
 
 
-
+8.实现部分可点击的TextView
+例如:QQ控件和微信朋友圈的点赞列表可以点击进去查看用户信息
+主要用到一个TextView 跟  SpannableStringBuilder类 
