@@ -293,3 +293,21 @@ URLSpan 						文本超链接
 8.实现部分可点击的TextView
 例如:QQ控件和微信朋友圈的点赞列表可以点击进去查看用户信息
 主要用到一个TextView 跟  SpannableStringBuilder类 
+
+
+9.实现跑马灯效果的TextView (就是会自动滚动的字符串)
+
+10.设置TextView字间距和行间距
+字间距
+	android:textScaleX:	控制字体水平方向的缩放,默认值1.0f,值是float
+java中使用setScaleX(2.0f)
+
+行间距
+	android:lineSpacingExtra:		设置行间距 如"3dp" 
+	android:lineSpacingMultiplier:	设置行间距的倍数
+java代码中可以通过:setLineSpacing方法来设置
+
+11.自动换行
+自动换行通过android:singleLine设置,默认为false.
+需要自动换行:		android:singleLine = "false"
+反之				android:singleLine = "true"
