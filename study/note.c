@@ -311,3 +311,109 @@ java代码中可以通过:setLineSpacing方法来设置
 自动换行通过android:singleLine设置,默认为false.
 需要自动换行:		android:singleLine = "false"
 反之				android:singleLine = "true"
+
+
+
+// EditText (输入框)
+常用属性:
+android:hint= "默认提示文本"
+android:textColorHint="#95A1AA" // 默认文本颜色
+android:selectAllOnFocus="true" // 自动全选默认提示文本内容
+android:inputType="phone"		// 限制输入内容的类型
+可选参数分文本类型和数值类型:具体百度 phone拨号键盘
+android:minLines="3"			// 设置最小行的行数
+android:maxLines="3"			// 设置最大行的行数  当超过,文字自动向上滚动
+android:singleLine="true"		// 限制单行输入
+android:textScaleX="1.5"		// 设置字与字的水平间隔
+android:textScaleY="1.5"		// 设置字与字的垂直间隔
+android:capitalize="none"		// 设置英文字母大写类型的属性,默认none
+有三个可选值:	sentence:仅第一个字母大写	words:每个单词首字母大写,空格间隔
+				character:每个英文字母都大写
+android:marginTop="5dp"			// 使用margin相关属性增加组件相对其他控件的距离
+android:paddingTop="5dp"		// 使用padding增加组件内容文件和组件边框的距离
+
+
+设置EditText获得焦点,同时弹出小键盘
+1.首先时让EditText获得焦点与清除焦点
+edit.requestFocus();	// 请求获取焦点
+edit.clearFocus();		// 清除焦点
+
+
+低版本的系统直接requestFocus就会自动弹出小键盘了
+稍微高一点的版本则需要我们手动地去弹键盘： 
+第一种：
+	InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)
+	imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+
+第二种:
+	InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+	imm.hideSoftInputFrowWindow(view.getWindowToken(), 0); // 强制隐藏键盘
+
+如果上述两种方法并没有弹出小键盘.
+
+可以使用windowSoftInputMode属性来解决弹出小键盘的问题
+android:windowSoftInputMode Activity主窗口与软键盘的交互模式,可以用来避免输入法面板站遮挡问题
+这个属性能影响两件事:
+1.当有焦点产生时,软键盘是隐藏还是显示
+2.是否减少活动主窗口大小以便腾出控件放软键盘
+
+简单点就是有焦点时的键盘控制以及是否减少Act的窗口大小，用来放小键盘
+有下述值可供选择，可设置多个值，用"|"分开
+
+stateUnspecified：	软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置
+stateUnchanged：	当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示
+stateHidden：		用户选择activity时，软键盘总是被隐藏
+stateAlwaysHidden：	当该Activity主窗口获取焦点时，软键盘也总是被隐藏的
+stateVisible：		软键盘通常是可见的
+stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态
+adjustUnspecified：	默认设置，通常由系统自行决定是隐藏还是显示
+adjustResize：		该Activity总是调整屏幕的大小以便留出软键盘的空间
+adjustPan：			当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分
+
+我们可以在AndroidManifest.xml为需要弹出小键盘的Activity设置这个属性，比如：
+<activity
+	android:name=".MainActivity"
+	android:label="@string/app_name"
+	android:windowSoftInputMode="stateVisible" >
+
+然后在EditText对象requestFocus()就可以了
+	
+
+2.EditText 光标位置的控制
+EditText提供了setSelection()方法,有两种形式:
+void setSelection(int index)
+void setSelection(int start, int stop)
+// 一个参数时设置光标位置,两个参数是设置起始位置和结束位置的中间括的部分,即选中部分.
+// 也可以调用 setSelectAllOnFocus(true):	让EditText获得焦点时选中全部文本
+// 还可以是哟 setCursoVisible(false)		设置光标不显示
+// getSelectionStart () 和 getSelectionEnd 	获取当前光标的前后位置
+
+3.带表情的EditText的简单实现
+方法一:
+	1.使用SpannableString来实现
+	2.使用Html类来实现
+
+实现代码:
+	public class MainActivity extends Activity {
+    private Button btn_add;
+    private EditText edit_one;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        btn_add = (Button) findViewById(R.id.btn_add);
+        edit_one = (EditText) findViewById(R.id.edit_one);
+        btn_add.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpannableString spanStr = new SpannableString("imge");
+                Drawable drawable = MainActivity.this.getResources().getDrawable(R.drawable.f045);
+                drawable.setBounds(0,0,drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
+                ImageSpan span = new ImageSpan(drawable,ImageSpan.ALIGN_BASELINE);
+                spanStr.setSpan(span,0,4,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                int cursor = edit_one.getSelectionStart();
+                edit_one.getText().insert(cursor, spanStr);
+            }
+        });
+    }
+}
