@@ -417,3 +417,34 @@ void setSelection(int start, int stop)
         });
     }
 }
+
+/* *
+ *
+ *	2.3.3 Button(按钮)与ImageButton(图像按钮)
+ *
+ * */
+Android基本控件中的两个按钮控件,Button普通按钮和ImageButton图像按钮;
+其实ImageButton跟Button的用法基本类似, Button是 TextView的子类
+
+1.StateListDrawable简介:
+StateListDrawable是Drawable资源的一种,可以根据不同的状态,设置不同的图片效果,关键节点
+<selector>
+只需要将Button的background属性设置为该drawable资源即可轻松实现,按下按钮时不同的按钮颜色或背景
+
+可以设置的属性:
+drawable:				引用的Drawable位图,把它放到最前面,就表示组件的正常状态
+state_focused:			是否获得焦点
+state_window_focused:	是否获得窗口焦点
+state_enabled:			控件是否可用
+state_checkable:		控件可否被勾选,eg:checkbox
+state_checked:			控件是否被勾选
+state_selected:			控件是否被选择,针对有滚轮的情况
+state_pressed:			控件是否被按下
+state_active:			控件是否处于活动状态,eg:slidingTab
+state_single:			控件包含多个子控件时,确定是否只显示一个子控件
+state_first:			控件包含多个子控件时,确定第一个子控件是否处于显示状态
+state_middle:			控件包含多个子控件时,确定中间一个子控件是否处于显示状态
+state_last:				控件包含多个子控件时,确定最后一个子控件是否处于显示状态
+
+2.实现按钮的按下效果:
+
